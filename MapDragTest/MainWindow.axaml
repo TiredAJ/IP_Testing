@@ -5,5 +5,9 @@
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="MapDragTest.MainWindow"
         Title="MapDragTest">
-    Welcome to Avalonia!
+	
+	<Canvas x:Name="cnvs_Main">
+		<Image x:Name="img_Main"/>
+	</Canvas>
+	
 </Window>
