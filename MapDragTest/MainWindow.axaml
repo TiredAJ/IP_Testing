@@ -2,12 +2,24 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:model="using:MapDragTest.Models"
+		xmlns:VM="using:MapDragTest.ViewModels"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="MapDragTest.MainWindow"
+		x:DataType="VM:MainViewModel"
         Title="MapDragTest">
+
+	<Window.Styles>
+		<Style Selector="Rectangle" x:DataType="model:Marker">
+			<Setter Property="Width" Value="25"/>
+			<Setter Property="Height" Value="25"/>
+		</Style>
+	</Window.Styles>
 	
-	<Canvas x:Name="cnvs_Main">
-		<Image x:Name="img_Main"/>
+	<Canvas x:Name="cnvs_Main" Background="Aqua" >
+		<Image x:Name="img_Main" Canvas.Left="50" Width="450"/>
+		<Rectangle x:Name="rct_Start" Fill="Black" Canvas.Left ="{Binding Start.X}"/>
+		<Rectangle x:Name="rct_End" Fill="BlueViolet" Canvas.Top ="{Binding Start.Y}"/>-->
 	</Canvas>
 	
 </Window>
